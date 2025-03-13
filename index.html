@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Fun Facts</title>
+    <style>
+        body {
+            background-color: #e0f7e0; /* Light green background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #4caf50; /* Darker green border */
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+        }
+
+        button {
+            background-color: #4caf50; /* Green button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        #factDisplay {
+            margin: 20px 0;
+            font-size: 1.2em;
+            animation: fadeIn 0.5s; /* Fade-in animation */
+        }
+
+        .icon {
+            width: 50px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Fun Facts</h1>
+        <button id="factButton">Get a Random Fact</button>
+        <p id="factDisplay"></p>
+        <button id="twitterShare">Share on Twitter</button>
+        <img src="crocodile-icon.png" alt="Crocodile Icon" class="icon">
+    </div>
+    <script>
+        const facts = [
+            "Crocodiles have been around for about 200 million years, making them one of the oldest living species.",
+            "The largest crocodile ever recorded weighed around 2,206 pounds.",
+            "Crocodiles have a powerful bite, with a force of up to 3,700 pounds per square inch.",
+            "Unlike most reptiles, crocodiles have a four-chambered heart similar to birds and mammals.",
+            "Crocodiles can replace each of their 80 teeth throughout their lifetime.",
+            "They have excellent night vision, which helps them hunt at night.",
+            "Crocodiles communicate with each other through vocalizations, including hisses, growls, and bellows.",
+            "They can swim at speeds of up to 20 miles per hour.",
+            "Crocodiles are known to use tools, such as branches and logs, to lure birds.",
+            "The temperature of the nest determines the sex of the baby crocodiles.",
+            "Crocodiles have a special valve in their throats that allows them to breathe while underwater.",
+            "They can live up to 70 years in the wild.",
+            "Crocodiles have a unique way of cooling down by gaping their mouths and exposing their tongues to the air.",
+            "Despite their tough appearance, crocodile skin is very sensitive.",
+            "Crocodiles use their snouts to detect vibrations in the water, which helps them locate prey."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('factDisplay').textContent = facts[randomIndex];
+        });
+
+        document.getElementById('twitterShare').addEventListener('click', function() {
+            const fact = document.getElementById('factDisplay').textContent;
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(fact)}`;
+            window.open(twitterUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
