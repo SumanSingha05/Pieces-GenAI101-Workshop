@@ -1,2 +1,2 @@
 # Pieces-GenAI101-Workshop
-GenAI 101 Workshoop
+GenAI 101 Workshop
